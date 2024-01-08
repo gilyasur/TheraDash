@@ -2,9 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class TherapistProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True, null=True)
+    specialization = models.CharField(max_length=100, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Profile of {self.user.username}"
+
 class Patient(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    realID = models.IntegerField()
+    therapist = models.ForeignKey(TherapistProfile, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
@@ -15,21 +24,7 @@ class Patient(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
-    
-
-class TherapistProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True, null=True)
-    specialization = models.CharField(max_length=100, blank=True, null=True)
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
-    # Add more fields as needed for therapist information
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"Profile of {self.user.username}"
+        return f"{self.first_name} {self.last_name} (Therapist: {self.therapist.user.username})"
 
 class Appointment(models.Model):
     therapist = models.ForeignKey(User, on_delete=models.CASCADE)

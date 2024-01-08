@@ -1,26 +1,75 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework import generics
-# Create your views here.
+from django.contrib.auth.models import User
+from .serializer import UserRegistrationSerializer, TherapistProfileSerializer, PatientSerializer, AppointmentSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from .models import Patient, Appointment, TherapistProfile
 
-# views.py
 
-from rest_framework import generics
-from .models import Patient, Appointment
-from .serializer import PatientSerializer, AppointmentSerializer
 
 class PatientListCreateView(generics.ListCreateAPIView):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
+    permission_classes = [IsAuthenticated]  # Require authentication
 
 class PatientRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
+    permission_classes = [IsAuthenticated]  # Require authentication
 
 class AppointmentListCreateView(generics.ListCreateAPIView):
-    queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+    authentication_classes = [TokenAuthentication]  # Use TokenAuthentication
+    permission_classes = [IsAuthenticated]  # Require authentication
+
+    def get_queryset(self):
+        # Filter appointments based on the authenticated user (therapist)
+        return Appointment.objects.filter(therapist=self.request.user)
+
+    def perform_create(self, serializer):
+        # Set the therapist field to the authenticated user when creating an appointment
+        serializer.save(therapist=self.request.user)
 
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+    authentication_classes = [TokenAuthentication]  # Use TokenAuthentication
+    permission_classes = [IsAuthenticated]  # Require authentication
+
+    def get_queryset(self):
+        # Filter appointments based on the authenticated user (therapist)
+        return Appointment.objects.filter(therapist=self.request.user)
+
+class UserRegistrationView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserRegistrationSerializer
+
+class TherapistProfileListCreateView(generics.ListCreateAPIView):
+    queryset = TherapistProfile.objects.all()
+    serializer_class = TherapistProfileSerializer
+    authentication_classes = [TokenAuthentication]  # Use TokenAuthentication
+    permission_classes = [IsAuthenticated]  # Require authentication
+
+class TherapistProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TherapistProfile.objects.all()
+    serializer_class = TherapistProfileSerializer
+    authentication_classes = [TokenAuthentication]  # Use TokenAuthentication
+    permission_classes = [IsAuthenticated]  # Require authentication
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+ 
+        # Add custom claims
+        token['username'] = user.username
+        # ...
+ 
+        return token
+ 
+ 
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
