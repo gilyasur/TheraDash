@@ -12,14 +12,29 @@ class PatientSerializer(serializers.ModelSerializer):
 
 
 class AppointmentSerializer(serializers.ModelSerializer):
+    patient = PatientSerializer()  # Use the PatientSerializer for the patient field
+    
     class Meta:
         model = Appointment
-        fields = '__all__'
+        fields = [
+            'id',
+            'recurring_frequency',
+            'day_of_week',
+            'time_of_day',
+            'location',
+            'notes',
+            'created_at',
+            'updated_at',
+            'therapist',
+            'patient',
+        ]
 
+    # Define a method to get the patient's name
+    def get_patient_name(self, obj):
+        return obj.patient.name if obj.patient else None
 # serializers.py in your Django app
 
-from rest_framework import serializers
-from django.contrib.auth.models import User
+
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=30, required=True)
