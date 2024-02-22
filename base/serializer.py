@@ -1,10 +1,8 @@
 from rest_framework import serializers
-from .models import Patient, Appointment, TherapistProfile
+from .models import Appointment
+from .models import Patient
 from django.contrib.auth.models import User
-from rest_framework_simplejwt.views import TokenObtainPairView
 
-
-    
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
@@ -12,48 +10,38 @@ class PatientSerializer(serializers.ModelSerializer):
 
 
 class AppointmentSerializer(serializers.ModelSerializer):
-    patient = PatientSerializer()  # Use the PatientSerializer for the patient field
-    
+    # Define the occurrence_date field with the desired date format
+    occurrence_date = serializers.DateField(format='%Y-%m-%d')
+
+    # Use a nested serializer for the patient field
+    patient = PatientSerializer()
+
     class Meta:
         model = Appointment
-        fields = [
-            'id',
-            'recurring_frequency',
-            'day_of_week',
-            'time_of_day',
-            'location',
-            'notes',
-            'created_at',
-            'updated_at',
-            'therapist',
-            'patient',
-        ]
+        fields = '__all__'
 
     # Define a method to get the patient's name
     def get_patient_name(self, obj):
-        return obj.patient.name if obj.patient else None
-# serializers.py in your Django app
-
+        return obj.patient.first_name + ' ' + obj.patient.last_name if obj.patient else None
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
-    first_name = serializers.CharField(max_length=30, required=True)
-    last_name = serializers.CharField(max_length=30, required=True)
+    bio = serializers.CharField(max_length=255, required=False, allow_blank=True)
+    specialization = serializers.CharField(max_length=100, required=False, allow_blank=True)
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'email', 'first_name', 'last_name']
+        fields = ['username', 'password', 'email', 'first_name', 'last_name', 'bio', 'specialization']
 
     def create(self, validated_data):
-        # Extract first_name and last_name from validated_data
-        first_name = validated_data.pop('first_name')
-        last_name = validated_data.pop('last_name')
+        # Extract additional fields from serializer data
+        bio = validated_data.pop('bio', None)
+        specialization = validated_data.pop('specialization', None)
 
         # Create user with first_name and last_name
-        user = User.objects.create_user(**validated_data, first_name=first_name, last_name=last_name)
-        return user
+        user = User.objects.create_user(**validated_data)
 
-class TherapistProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TherapistProfile
-        fields = '__all__'
+        # Create a Patient linked to the new user
+        Patient.objects.create(therapist=user, **validated_data)
+
+        return user
