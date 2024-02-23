@@ -98,7 +98,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'myproj.urls'
-DATE_FORMAT = 'd/m/Y'
 
 TEMPLATES = [
     {

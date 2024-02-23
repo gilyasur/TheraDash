@@ -8,7 +8,11 @@ class PatientSerializer(serializers.ModelSerializer):
         model = Patient
         fields = '__all__'
 
-
+class AppointmentJustSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Appointment
+        fields = '__all__'
+        
 class AppointmentSerializer(serializers.ModelSerializer):
     # Define the occurrence_date field with the desired date format
     occurrence_date = serializers.DateField(format='%Y-%m-%d')

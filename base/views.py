@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import generics
 from django.contrib.auth.models import User
-from .serializer import UserRegistrationSerializer, PatientSerializer, AppointmentSerializer
+from .serializer import UserRegistrationSerializer, PatientSerializer, AppointmentSerializer, AppointmentJustSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.permissions import IsAuthenticated
@@ -36,21 +36,25 @@ class PatientRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
         return Patient.objects.filter(therapist=self.request.user)
 
 
-@permission_classes([IsAuthenticated])
 class AppointmentListCreateView(generics.ListCreateAPIView):
-    serializer_class = AppointmentSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         # Filter appointments based on the authenticated user (therapist)
         return Appointment.objects.filter(therapist=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return AppointmentJustSerializer
+        return AppointmentSerializer
 
     def perform_create(self, serializer):
         # Set the therapist field when creating an appointment
         serializer.save(therapist=self.request.user)
 
 
-@permission_classes([IsAuthenticated])
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAuthenticated]
     serializer_class = AppointmentSerializer
 
     def get_queryset(self):
