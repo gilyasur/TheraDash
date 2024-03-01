@@ -13,13 +13,23 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config
 from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+STATIC_URL = 'static/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'media'),
+)
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-saqqkqvgswpdp&^2&i--r1=ke$^dj*j2k*twf@!-888%xjjg-c'

@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from .models import Patient, Appointment
 from rest_framework.response import Response
-
+from django.shortcuts import get_object_or_404
 
 class PatientListCreateView(generics.ListCreateAPIView):
     serializer_class = PatientSerializer
@@ -55,8 +55,13 @@ class AppointmentListCreateView(generics.ListCreateAPIView):
 
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
-    serializer_class = AppointmentSerializer
 
+
+    def get_serializer_class(self):
+        if self.request.method == 'PATCH':
+            return AppointmentJustSerializer
+        return AppointmentSerializer
+    
     def get_queryset(self):
         # Filter appointments based on the authenticated user (therapist)
         return Appointment.objects.filter(therapist=self.request.user)
@@ -88,8 +93,6 @@ class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 
 class PatientAppointmentListView(generics.RetrieveAPIView):
     serializer_class = PatientSerializer
