@@ -1,15 +1,20 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework import generics
+from rest_framework import generics, status
 from django.contrib.auth.models import User
-from .serializer import UserRegistrationSerializer, PatientSerializer, AppointmentSerializer, AppointmentJustSerializer
+from .serializer import UserRegistrationSerializer, PatientSerializer, AppointmentSerializer, AppointmentJustSerializer, ProfileSerializer, ProfileDetailSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from .models import Patient, Appointment
+from .models import Patient, Appointment, Profile
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView
+from rest_framework.views import APIView
+
+
 
 class PatientListCreateView(generics.ListCreateAPIView):
     serializer_class = PatientSerializer
@@ -78,17 +83,23 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
- 
+        
         # Add custom claims
         token['username'] = user.username
         token['first_name'] = user.first_name
         token['last_name'] = user.last_name
-        token['email']=user.email
-        # ...
- 
+        token['email'] = user.email
+        token['id'] = user.id
+        # Add profile image URL
+
+        try:
+            profile = Profile.objects.get(user=user)
+            token['profile_image'] = profile.profile_image.url if profile.profile_image else None
+        except Profile.DoesNotExist:
+            token['profile_image'] = None
+        
         return token
- 
- 
+
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
@@ -107,3 +118,30 @@ class PatientAppointmentListView(generics.RetrieveAPIView):
         # Serialize and return the data
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
+    
+
+
+class ProfileRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'user_id'  # Set the lookup field to 'user_id'
+
+    def get_queryset(self):
+        # Filter profiles based on the authenticated user
+        return Profile.objects.filter(user=self.request.user)
+    
+    def perform_create(self, serializer):
+        # Assign the current user to the profile being created
+        serializer.save(user=self.request.user)
+
+class ProfileListCreateView(APIView):
+    def post(self, request, user_id, format=None):
+        # Assign the user_id to the user_id field of the profile
+        request.data['user_id'] = user_id
+        serializer = ProfileSerializer(data=request.data)
+        print(user_id)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

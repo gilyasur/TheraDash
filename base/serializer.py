@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Appointment
 from .models import Patient
+from .models import Profile
+
 from django.contrib.auth.models import User
 
 class PatientSerializer(serializers.ModelSerializer):
@@ -12,7 +14,7 @@ class AppointmentJustSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment
         fields = '__all__'
-        
+
 class AppointmentSerializer(serializers.ModelSerializer):
     # Define the occurrence_date field with the desired date format
     occurrence_date = serializers.DateField(format='%Y-%m-%d')
@@ -49,3 +51,16 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         Patient.objects.create(therapist=user, **validated_data)
 
         return user
+
+class ProfileSerializer(serializers.ModelSerializer):
+    user_id = serializers.IntegerField()  # Allow user_id to be provided in request body
+
+    class Meta:
+        model = Profile
+        fields = ['user_id', 'profile_image', 'title']
+
+
+class ProfileDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = '__all__'

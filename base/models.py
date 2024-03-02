@@ -41,3 +41,15 @@ class Transcript(models.Model):
 
     def __str__(self):
         return f"Transcript for {self.appointment}"
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
+    title = models.CharField(max_length=100, default='', blank=True)
+    address = models.TextField(blank=True,null=True)
+    dob = models.DateField(blank=True,null=True)
+    def __str__(self):
+        return self.user.username
+
+    def get_default_title(self):
+        return self.user.first_name if self.user.first_name else 'Default Title'
