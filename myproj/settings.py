@@ -13,10 +13,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config
 from datetime import timedelta
+import certifi
 import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 STATIC_URL = 'static/'
 # Quick-start development settings - unsuitable for production
@@ -37,10 +40,11 @@ SECRET_KEY = 'django-insecure-saqqkqvgswpdp&^2&i--r1=ke$^dj*j2k*twf@!-888%xjjg-c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
+ 
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -186,3 +190,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Set SSL certificate file path
+os.environ['SSL_CERT_FILE'] = certifi.where()
+
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'therapistdashboardapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'pvnmnduiqaibhpyj'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+

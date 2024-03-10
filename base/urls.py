@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from .views import PatientListCreateView, PatientRetrieveUpdateDestroyView, AppointmentDetailView,AppointmentListCreateView,ProfileRetrieveUpdateDestroyView, UserRegistrationView,  PatientAppointmentListView,ProfileListCreateView
+from .views import PatientListCreateView, PatientRetrieveUpdateDestroyView, AppointmentDetailView,AppointmentListCreateView,ProfileRetrieveUpdateDestroyView, UserRegistrationView,  PatientAppointmentListView,ProfileListCreateView,SendResetPassword, change_password_view
 
 from . import views
 from .views import UserRegistrationView
@@ -15,7 +15,9 @@ urlpatterns = [
     path('patients/<int:pk>/appointments/', PatientAppointmentListView.as_view(), name='patient-appointments'),
     path('profiles/<int:user_id>/', ProfileRetrieveUpdateDestroyView.as_view(), name='profile-detail'),
     path('profiles/create/<int:user_id>/', ProfileListCreateView.as_view(), name='profile-list-create'),
-
+    path('sendResetEmail/',SendResetPassword.as_view(), name='send-test-email'),
+    path('reset-password/<int:user_id>/', change_password_view, name='change-password'),
+    
 
 ]
 

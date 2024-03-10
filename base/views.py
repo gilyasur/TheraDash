@@ -13,7 +13,16 @@ from django.shortcuts import get_object_or_404
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.views import APIView
+from django.conf import settings
+import requests
+from django.http import HttpResponse
+from django.core.mail import send_mail
+import logging
+from django.template.loader import render_to_string
 
+
+
+logger = logging.getLogger(__name__)
 
 
 class PatientListCreateView(generics.ListCreateAPIView):
@@ -78,6 +87,44 @@ class UserRegistrationView(generics.CreateAPIView):
     def perform_create(self, serializer):
         # Create a new user
         user = User.objects.create_user(**serializer.validated_data)
+        # You may return additional data if needed
+        return Response({'message': 'User created successfully'}, status=status.HTTP_201_CREATED)
+
+
+
+@api_view(['PATCH'])
+def change_password_view(request, user_id):
+    if request.method == 'PATCH':
+        # Check if the username is present in the request data
+        if 'username' not in request.data:
+            return Response({'error': 'Username is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Retrieve the user object based on user_id
+            user = User.objects.get(pk=user_id)
+            # Get the new password and username from the request data
+            new_password = request.data.get('new_password')
+            username = request.data.get('username')
+            
+            # Check if the provided username matches the username associated with the user ID
+            if username != user.username:
+                return Response({'error': 'Username does not match the user ID'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Set the new password for the user
+            user.set_password(new_password)
+            user.save()
+            # Optionally, you can update the username as well
+            # user.username = username
+            # user.save()
+            # Return a success response
+            return Response({'message': 'Password changed successfully'}, status=status.HTTP_200_OK)
+        except User.DoesNotExist:
+            # Handle case where user with provided user_id does not exist
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+    else:
+        # Return an error response for unsupported HTTP methods
+        return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -145,3 +192,34 @@ class ProfileListCreateView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
+
+class SendResetPassword(APIView):
+    def post(self, request):
+        try:
+            username = request.data.get('username')
+            
+            # Find the user with the given username
+            user = User.objects.filter(username=username).first()
+
+            if user is None:
+                return Response({'message': 'No user found with this username'}, status=status.HTTP_404_NOT_FOUND)
+
+            # Retrieve the email associated with the user
+            email = user.email
+            userId=user.id
+            
+            # Define the email subject and message
+            subject = "Password Reset"
+            message = f"Dear {user.first_name}, we have just received a password reset request to your account.\n" \
+            f"Please follow this link to reset your password: https://example.com/reset-password/{username}/{userId}"
+
+            # Send the email
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [email], fail_silently=False)
+
+            return Response({'message': 'Reset password email sent successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'message': f'Failed to send Reset password email: {str(e)}'},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
