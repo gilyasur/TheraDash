@@ -19,7 +19,11 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 import logging
 from django.template.loader import render_to_string
-
+from django.shortcuts import render, redirect
+from .forms import ProfileForm
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from datetime import datetime
 
 
 logger = logging.getLogger(__name__)
@@ -49,6 +53,17 @@ class PatientRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     # Filter patients based on the authenticated user (therapist)
         return Patient.objects.filter(therapist=self.request.user)
 
+@permission_classes([IsAuthenticated])
+class CancelPatientStatusView(generics.UpdateAPIView):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
+
+    def patch(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(canceled=request.data.get('canceled', instance.canceled))
+        return Response(serializer.data)
 
 class AppointmentListCreateView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
@@ -142,9 +157,10 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         try:
             profile = Profile.objects.get(user=user)
             token['profile_image'] = profile.profile_image.url if profile.profile_image else None
+            token['dob'] = profile.dob.isoformat() if profile.dob else None  # Convert dob to ISO 8601 string
         except Profile.DoesNotExist:
             token['profile_image'] = None
-        
+            
         return token
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -195,7 +211,29 @@ class ProfileListCreateView(APIView):
     
 
 
+class EditProfileView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        profile = request.user.profile if hasattr(request.user, 'profile') else None
+        form = ProfileForm(instance=profile)
+        return Response({'form': form})
+
+    def patch(self, request):
+        profile = request.user.profile if hasattr(request.user, 'profile') else None
+        form = ProfileForm(request.data, request.FILES, instance=profile)
+        if form.is_valid():
+            profile_instance = form.save(commit=False)
+            profile_instance.user = request.user
+            profile_instance.save()
+            
+            # Serialize the updated profile instance
+            serializer = ProfileSerializer(profile_instance)
+            
+            return Response({'message': 'Profile updated successfully', 'profile': serializer.data}, status=status.HTTP_200_OK)
+        return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    
 class SendResetPassword(APIView):
     def post(self, request):
         try:
