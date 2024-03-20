@@ -1,0 +1,4 @@
+2024-03-20 09:07:52,044 INFO autoreload 62757 8151916224 Watching for file changes with StatReloader
+2024-03-20 09:07:59,939 - INFO - Reset password request received
+2024-03-20 09:08:02,056 - INFO - Reset password email sent to gilyasur@gmail.com
+2024-03-20 09:08:02,057 INFO basehttp 62757 6138425344 "POST /sendResetEmail/ HTTP/1.1" 200 52
