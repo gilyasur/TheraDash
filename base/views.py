@@ -24,9 +24,9 @@ from .forms import ProfileForm
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from datetime import datetime
+import logging
 
 
-logger = logging.getLogger(__name__)
 
 
 class PatientListCreateView(generics.ListCreateAPIView):
@@ -144,6 +144,9 @@ def change_password_view(request, user_id):
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
+        logger = logging.getLogger(__name__)
+        logger.info("Generating token for user: %s", user.username)
+
         token = super().get_token(user)
         
         # Add custom claims
@@ -166,7 +169,18 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
+    def post(self, request, *args, **kwargs):
+        logger = logging.getLogger(__name__)
+        logger.info("Token obtain request received")
 
+        response = super().post(request, *args, **kwargs)
+
+        if response.status_code == 200:
+            logger.info("Token obtained successfully for user: %s", request.data.get('username'))
+        else:
+            logger.error("Failed to obtain token for user: %s", request.data.get('username'))
+
+        return response
 
 class PatientAppointmentListView(generics.RetrieveAPIView):
     serializer_class = PatientSerializer
@@ -237,17 +251,22 @@ class EditProfileView(APIView):
 class SendResetPassword(APIView):
     def post(self, request):
         try:
+            # Logging setup
+            logger = logging.getLogger(__name__)
+            logger.info("Reset password request received")
+
             username = request.data.get('username')
             
             # Find the user with the given username
             user = User.objects.filter(username=username).first()
 
             if user is None:
+                logger.warning("No user found with username: %s", username)
                 return Response({'message': 'No user found with this username'}, status=status.HTTP_404_NOT_FOUND)
 
             # Retrieve the email associated with the user
             email = user.email
-            userId=user.id
+            userId = user.id
             
             # Define the email subject and message
             subject = "Password Reset"
@@ -256,8 +275,10 @@ class SendResetPassword(APIView):
 
             # Send the email
             send_mail(subject, message, settings.EMAIL_HOST_USER, [email], fail_silently=False)
+            logger.info("Reset password email sent to %s", email)
 
             return Response({'message': 'Reset password email sent successfully'}, status=status.HTTP_200_OK)
         except Exception as e:
+            logger.error("Failed to send Reset password email: %s", str(e))
             return Response({'message': f'Failed to send Reset password email: {str(e)}'},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)

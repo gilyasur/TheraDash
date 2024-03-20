@@ -15,6 +15,8 @@ from decouple import config
 from datetime import timedelta
 import certifi
 import os
+import logging
+from logging.handlers import RotatingFileHandler
 
 from dotenv import load_dotenv
 
@@ -207,3 +209,42 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+LOG_FILE_PATH = os.path.join(BASE_DIR, 'logs', 'django.log')
+LOG_DIR = os.path.dirname(LOG_FILE_PATH)
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',  # Set the log level as per your requirement
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),  # Define the path to the log file
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s %(levelname)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',  # Set the log level as per your requirement
+            'propagate': False,
+        },
+    },
+}
+# Merge the default logging configuration with the custom configuration
+logging.basicConfig(
+    filename=LOG_FILE_PATH,
+    level=logging.INFO,  # Set the desired logging level
+    format='%(asctime)s - %(levelname)s - %(message)s',
+)
