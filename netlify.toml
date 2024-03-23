@@ -1,0 +1,6 @@
+ [build] 
+ command = "python manage.py collectstatic --noinput" publish = "path/to/your/static/files"
+
+
+[context.production]
+  command = "python manage.py migrate && python manage.py runserver"
