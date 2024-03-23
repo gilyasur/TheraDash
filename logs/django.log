@@ -2,3 +2,480 @@
 2024-03-20 09:07:59,939 - INFO - Reset password request received
 2024-03-20 09:08:02,056 - INFO - Reset password email sent to gilyasur@gmail.com
 2024-03-20 09:08:02,057 INFO basehttp 62757 6138425344 "POST /sendResetEmail/ HTTP/1.1" 200 52
+2024-03-22 11:50:05,021 INFO autoreload 10812 8151916224 Watching for file changes with StatReloader
+2024-03-22 11:50:23,495 INFO autoreload 11170 8151916224 Watching for file changes with StatReloader
+2024-03-22 11:50:36,483 INFO autoreload 11376 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:28:26,725 INFO autoreload 57514 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:28:35,775 INFO basehttp 57514 6135836672 "OPTIONS /login/ HTTP/1.1" 200 0
+2024-03-22 13:28:35,780 - INFO - Token obtain request received
+2024-03-22 13:28:35,924 - INFO - Generating token for user: lior
+2024-03-22 13:28:35,933 - INFO - Token obtained successfully for user: lior
+2024-03-22 13:28:35,933 INFO basehttp 57514 6135836672 "POST /login/ HTTP/1.1" 200 1086
+2024-03-22 13:28:36,011 INFO basehttp 57514 6135836672 "OPTIONS /profiles/2 HTTP/1.1" 200 0
+2024-03-22 13:28:36,013 INFO basehttp 57514 6169489408 "OPTIONS /appointments/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,015 INFO basehttp 57514 6152663040 "OPTIONS /patients/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,020 INFO basehttp 57514 6186315776 "OPTIONS /profiles/2 HTTP/1.1" 200 0
+2024-03-22 13:28:36,021 INFO basehttp 57514 6203142144 "OPTIONS /patients/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,025 INFO basehttp 57514 6219968512 "OPTIONS /appointments/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,029 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:36,034 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:36,035 INFO basehttp 57514 6219968512 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:36,046 INFO basehttp 57514 6169489408 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:36,050 INFO basehttp 57514 6135836672 "GET /profiles/2 HTTP/1.1" 301 0
+2024-03-22 13:28:36,054 INFO basehttp 57514 6219968512 "OPTIONS /profiles/2/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,054 INFO basehttp 57514 6169489408 "OPTIONS /profiles/2/ HTTP/1.1" 200 0
+2024-03-22 13:28:36,057 INFO basehttp 57514 6219968512 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:36,059 INFO basehttp 57514 6236794880 "GET /media/profile_images/%D7%A9%D7%97%D7%A8%D7%A4%D7%A1%D7%A4%D7%95%D7%A8%D7%98_4OSNKMu.png HTTP/1.1" 200 928821
+2024-03-22 13:28:36,060 INFO basehttp 57514 6169489408 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:37,507 INFO basehttp 57514 6135836672 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:37,519 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:37,519 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:37,525 INFO basehttp 57514 6169489408 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:38,492 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:38,503 INFO basehttp 57514 6135836672 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:38,505 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:38,509 INFO basehttp 57514 6169489408 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:38,511 INFO basehttp 57514 6186315776 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:38,513 INFO basehttp 57514 6152663040 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:39,460 INFO basehttp 57514 6152663040 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:39,462 INFO basehttp 57514 6186315776 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:39,469 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:39,473 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:40,031 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:40,037 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:40,041 INFO basehttp 57514 6186315776 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:40,048 INFO basehttp 57514 6169489408 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:40,910 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:40,918 INFO basehttp 57514 6186315776 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:40,922 INFO basehttp 57514 6152663040 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:40,929 INFO basehttp 57514 6169489408 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:41,375 INFO basehttp 57514 6135836672 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:41,389 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:41,389 INFO basehttp 57514 6169489408 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:41,396 INFO basehttp 57514 6135836672 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:41,399 INFO basehttp 57514 6186315776 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:41,401 INFO basehttp 57514 6152663040 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:28:45,921 INFO basehttp 57514 6186315776 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:45,928 INFO basehttp 57514 6152663040 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:28:45,928 INFO basehttp 57514 6135836672 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:28:45,936 INFO basehttp 57514 6186315776 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:29:16,161 INFO autoreload 57514 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/models.py changed, reloading.
+2024-03-22 13:29:16,517 INFO autoreload 58485 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:27,803 INFO autoreload 58485 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:28,027 INFO autoreload 58774 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:29,145 INFO autoreload 58774 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:29,378 INFO autoreload 58877 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:31,520 INFO autoreload 58877 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:31,759 INFO autoreload 58926 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:33,903 INFO autoreload 58926 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:34,131 INFO autoreload 58958 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:36,257 INFO autoreload 58958 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:36,484 INFO autoreload 59001 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:37,622 INFO autoreload 59001 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:37,831 INFO autoreload 59002 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:38,972 INFO autoreload 59002 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:39,200 INFO autoreload 59003 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:29:43,379 INFO autoreload 59003 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/serializer.py changed, reloading.
+2024-03-22 13:29:43,690 INFO autoreload 59162 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:01,074 INFO autoreload 59162 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:01,307 INFO autoreload 59553 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:03,452 INFO autoreload 59553 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:03,687 INFO autoreload 59660 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:05,817 INFO autoreload 59660 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:06,047 INFO autoreload 59702 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:26,569 INFO autoreload 59702 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:26,920 INFO autoreload 60074 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:40,255 INFO autoreload 60074 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:40,582 INFO autoreload 60326 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:42,727 INFO autoreload 60326 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:42,959 INFO autoreload 60332 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:46,154 INFO autoreload 60332 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:46,413 INFO autoreload 60474 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:48,557 INFO autoreload 60474 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:48,793 INFO autoreload 60480 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:53,991 INFO autoreload 60480 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:54,237 INFO autoreload 60623 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:30:55,354 INFO autoreload 60623 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:30:55,591 INFO autoreload 60660 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:02,829 INFO autoreload 60660 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:03,059 INFO autoreload 60728 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:06,210 INFO autoreload 60728 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:06,448 INFO autoreload 60868 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:09,604 INFO autoreload 60868 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:09,852 INFO autoreload 60888 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:13,043 INFO autoreload 60888 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:13,288 INFO autoreload 60919 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:16,448 INFO autoreload 60919 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:16,687 INFO autoreload 61059 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:17,801 INFO autoreload 61059 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-22 13:31:18,022 INFO autoreload 61071 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:31:47,045 INFO autoreload 61526 8151916224 Watching for file changes with StatReloader
+2024-03-22 13:32:10,498 - INFO - Token obtain request received
+2024-03-22 13:32:10,629 - INFO - Generating token for user: lior
+2024-03-22 13:32:10,635 - INFO - Token obtained successfully for user: lior
+2024-03-22 13:32:10,636 INFO basehttp 61526 6199373824 "POST /login/ HTTP/1.1" 200 1086
+2024-03-22 13:32:10,694 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:32:10,698 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:32:10,704 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:32:10,704 INFO basehttp 61526 6249852928 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:32:10,709 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-22 13:32:10,710 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:32:22,363 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:32:22,375 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-22 13:32:22,379 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-22 13:32:22,383 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:22,452 - INFO - Token obtain request received
+2024-03-23 18:20:22,574 - INFO - Generating token for user: lior
+2024-03-23 18:20:22,577 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:20:22,578 INFO basehttp 61526 6199373824 "POST /login/ HTTP/1.1" 200 1086
+2024-03-23 18:20:22,648 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:22,660 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:22,660 INFO basehttp 61526 6249852928 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:22,661 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:20:22,668 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:22,668 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:20:22,673 INFO basehttp 61526 6266679296 "GET /media/profile_images/%D7%A9%D7%97%D7%A8%D7%A4%D7%A1%D7%A4%D7%95%D7%A8%D7%98_4OSNKMu.png HTTP/1.1" 200 928821
+2024-03-23 18:20:23,967 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:23,971 INFO basehttp 61526 6249852928 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:23,972 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:23,976 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:24,400 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:24,408 INFO basehttp 61526 6249852928 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:20:24,408 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:24,413 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:20:24,420 INFO basehttp 61526 6249852928 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:20:24,424 INFO basehttp 61526 6199373824 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:23:31,052 - INFO - Token obtain request received
+2024-03-23 18:23:31,178 - INFO - Generating token for user: lior
+2024-03-23 18:23:31,181 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:23:31,182 INFO basehttp 61526 6199373824 "POST /login/ HTTP/1.1" 200 1086
+2024-03-23 18:23:31,234 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:31,234 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:23:31,238 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:23:31,241 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:31,246 INFO basehttp 61526 6249852928 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:23:31,247 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:23:32,306 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:32,311 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:32,312 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:23:32,316 INFO basehttp 61526 6233026560 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:23:33,921 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:33,930 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:23:33,931 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:23:33,936 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:23:33,940 INFO basehttp 61526 6249852928 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:23:33,941 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:44,830 - INFO - Token obtain request received
+2024-03-23 18:26:44,954 - INFO - Generating token for user: lior
+2024-03-23 18:26:44,958 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:26:44,958 INFO basehttp 61526 6216200192 "POST /login/ HTTP/1.1" 200 1086
+2024-03-23 18:26:45,029 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:45,030 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:45,036 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:45,036 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:45,039 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:45,042 INFO basehttp 61526 6233026560 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:47,369 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:47,374 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:47,377 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:48,907 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:48,934 INFO basehttp 61526 6233026560 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:48,936 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:48,943 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:49,773 INFO basehttp 61526 6249852928 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:49,775 INFO basehttp 61526 6216200192 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:49,782 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:49,783 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:49,789 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:49,790 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:58,748 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:58,759 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:26:58,762 INFO basehttp 61526 6199373824 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:26:58,766 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:58,771 INFO basehttp 61526 6199373824 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:26:58,771 INFO basehttp 61526 6233026560 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:27:29,351 INFO basehttp 61526 6233026560 "OPTIONS /edit_profile/ HTTP/1.1" 200 0
+2024-03-23 18:27:29,365 INFO basehttp 61526 6199373824 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:27:29,381 INFO basehttp 61526 6233026560 "PATCH /edit_profile/ HTTP/1.1" 200 184
+2024-03-23 18:27:32,025 INFO basehttp 61526 6233026560 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:27:32,030 INFO basehttp 61526 6199373824 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:27:32,037 INFO basehttp 61526 6216200192 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:27:32,043 INFO basehttp 61526 6249852928 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:27:32,043 INFO basehttp 61526 6233026560 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:27:32,045 INFO basehttp 61526 6216200192 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:29:38,126 INFO autoreload 61526 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:29:38,546 INFO autoreload 67834 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:29:41,720 INFO autoreload 67834 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:29:41,989 INFO autoreload 67842 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:29:45,169 INFO autoreload 67842 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:29:45,420 INFO autoreload 67990 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:06,989 INFO autoreload 67990 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:07,228 INFO autoreload 68354 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:09,365 INFO autoreload 68354 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:09,647 INFO autoreload 68396 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:14,857 INFO autoreload 68396 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:15,109 INFO autoreload 68540 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:16,278 INFO autoreload 68540 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:16,486 INFO autoreload 68546 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:21,677 INFO autoreload 68546 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:21,904 INFO autoreload 68606 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:26,049 INFO autoreload 68606 8151916224 /Users/gilyasur/Documents/My Projects/dashBoard /Back/base/views.py changed, reloading.
+2024-03-23 18:30:26,356 INFO autoreload 68763 8151916224 Watching for file changes with StatReloader
+2024-03-23 18:30:44,434 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:30:44,434 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:30:44,435 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:30:44,440 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:30:44,440 INFO basehttp 68763 6265630720 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:30:44,444 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:30:53,387 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:30:53,391 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:30:53,394 INFO basehttp 68763 6265630720 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:30:57,386 INFO basehttp 68763 6265630720 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:30:57,389 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:30:57,392 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:34:42,431 - INFO - Token obtain request received
+2024-03-23 18:34:42,560 - INFO - Generating token for user: lior
+2024-03-23 18:34:42,563 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:34:42,564 INFO basehttp 68763 6248804352 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:34:42,621 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:34:42,631 INFO basehttp 68763 6265630720 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:34:42,633 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:34:42,637 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:34:42,668 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:34:42,672 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:34:45,927 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:34:45,933 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:34:45,935 INFO basehttp 68763 6265630720 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:34:45,937 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:34:45,945 INFO basehttp 68763 6265630720 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:34:45,946 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:35:26,433 - INFO - Token obtain request received
+2024-03-23 18:35:26,584 - INFO - Generating token for user: lior
+2024-03-23 18:35:26,586 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:35:26,586 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:35:26,653 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:35:26,656 INFO basehttp 68763 6265630720 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:35:26,671 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:35:26,679 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:35:26,680 INFO basehttp 68763 6265630720 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:35:26,685 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:35:50,677 - INFO - Token obtain request received
+2024-03-23 18:35:50,799 - INFO - Generating token for user: lior
+2024-03-23 18:35:50,801 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:35:50,801 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:35:50,850 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:35:50,863 INFO basehttp 68763 6265630720 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:35:50,866 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:35:50,871 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:35:50,879 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:35:50,879 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:36:18,494 - INFO - Token obtain request received
+2024-03-23 18:36:18,644 - INFO - Generating token for user: lior
+2024-03-23 18:36:18,646 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:36:18,646 INFO basehttp 68763 6248804352 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:36:18,715 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:36:18,715 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:36:18,719 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:36:18,721 INFO basehttp 68763 6265630720 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:36:18,731 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:36:18,731 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:01,581 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:01,583 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:01,586 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:01,594 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,085 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,085 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,095 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,097 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,442 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,442 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,452 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,458 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,828 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,840 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,841 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:02,852 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:02,856 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:43:02,858 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:43:03,906 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:43:03,912 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:03,925 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:43:03,931 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:44:28,925 - INFO - Token obtain request received
+2024-03-23 18:44:29,074 WARNING log 68763 6198325248 Unauthorized: /login/
+2024-03-23 18:44:29,074 WARNING basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 401 63
+2024-03-23 18:44:33,016 - INFO - Token obtain request received
+2024-03-23 18:44:33,159 - INFO - Generating token for user: lior
+2024-03-23 18:44:33,162 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:44:33,162 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:44:33,248 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:44:33,253 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:44:33,258 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:44:33,263 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:44:33,264 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:44:33,267 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:44:54,827 - INFO - Token obtain request received
+2024-03-23 18:44:54,953 - INFO - Generating token for user: lior
+2024-03-23 18:44:54,955 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:44:54,956 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:44:54,994 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:44:55,001 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:44:55,001 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:44:55,005 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:44:55,013 INFO basehttp 68763 6215151616 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:44:55,014 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:45:26,341 - INFO - Token obtain request received
+2024-03-23 18:45:26,459 - INFO - Generating token for user: lior
+2024-03-23 18:45:26,462 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:45:26,462 INFO basehttp 68763 6248804352 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:45:26,516 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:45:26,519 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:45:26,525 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:45:26,531 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:45:26,531 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:45:26,535 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:46:44,292 - INFO - Token obtain request received
+2024-03-23 18:46:44,417 - INFO - Generating token for user: lior
+2024-03-23 18:46:44,420 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:46:44,420 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:46:44,464 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:46:44,472 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:46:44,483 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:46:44,491 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:46:44,492 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:46:44,495 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:47:03,640 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:03,647 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:03,651 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:03,655 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:40,835 - INFO - Token obtain request received
+2024-03-23 18:47:40,981 - INFO - Generating token for user: lior
+2024-03-23 18:47:40,984 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:47:40,984 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:47:41,033 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:41,040 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:41,051 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:41,056 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:47:41,057 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:41,059 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:47:43,036 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:43,041 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:43,048 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:43,064 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:43,566 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:43,575 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:47:43,579 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:47:43,583 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:48:15,281 - INFO - Token obtain request received
+2024-03-23 18:48:15,418 - INFO - Generating token for user: lior
+2024-03-23 18:48:15,420 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:48:15,420 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:48:15,473 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:48:15,475 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:48:15,483 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:48:15,487 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:48:15,488 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:48:15,494 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:49:47,711 - INFO - Token obtain request received
+2024-03-23 18:49:47,863 - INFO - Generating token for user: lior
+2024-03-23 18:49:47,866 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:49:47,866 INFO basehttp 68763 6231977984 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:49:47,935 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:49:47,940 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:49:47,943 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:49:47,945 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:49:47,947 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:49:47,954 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:05,825 - INFO - Token obtain request received
+2024-03-23 18:51:05,977 - INFO - Generating token for user: lior
+2024-03-23 18:51:05,979 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:51:05,980 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:51:06,034 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:51:06,035 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:06,040 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:06,045 INFO basehttp 68763 6215151616 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:51:06,046 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:06,048 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:28,075 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:28,081 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:28,084 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:28,088 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:28,568 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:28,581 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:28,581 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:28,584 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:51:28,588 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:28,588 INFO basehttp 68763 6215151616 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:51:29,045 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:29,051 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:51:29,054 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:51:29,063 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:55:02,309 INFO basehttp 68763 6198325248 "OPTIONS /login/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,311 - INFO - Token obtain request received
+2024-03-23 18:55:02,419 - INFO - Generating token for user: lior
+2024-03-23 18:55:02,422 - INFO - Token obtained successfully for user: lior
+2024-03-23 18:55:02,422 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 18:55:02,473 INFO basehttp 68763 6198325248 "OPTIONS /profiles/2 HTTP/1.1" 200 0
+2024-03-23 18:55:02,484 INFO basehttp 68763 6198325248 "OPTIONS /patients/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,484 INFO basehttp 68763 6215151616 "OPTIONS /appointments/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,485 INFO basehttp 68763 6231977984 "OPTIONS /profiles/2 HTTP/1.1" 200 0
+2024-03-23 18:55:02,489 INFO basehttp 68763 6265630720 "OPTIONS /appointments/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,490 INFO basehttp 68763 6248804352 "OPTIONS /patients/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,491 INFO basehttp 68763 6231977984 "OPTIONS /profiles/2/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,492 INFO basehttp 68763 6282457088 "OPTIONS /profiles/2/ HTTP/1.1" 200 0
+2024-03-23 18:55:02,497 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:55:02,502 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 18:55:02,502 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:55:02,506 INFO basehttp 68763 6282457088 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 18:55:02,509 INFO basehttp 68763 6215151616 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 18:55:02,514 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:01:25,187 WARNING log 68763 6198325248 Not Found: /
+2024-03-23 19:01:25,188 WARNING basehttp 68763 6198325248 "GET / HTTP/1.1" 404 4887
+2024-03-23 19:01:25,189 INFO basehttp 68763 6198325248 - Broken pipe from ('127.0.0.1', 61606)
+2024-03-23 19:01:29,171 WARNING log 68763 6198325248 Not Found: /media/
+2024-03-23 19:01:29,171 WARNING basehttp 68763 6198325248 "GET /media/ HTTP/1.1" 404 4965
+2024-03-23 19:01:29,172 INFO basehttp 68763 6198325248 - Broken pipe from ('127.0.0.1', 61630)
+2024-03-23 19:01:32,176 WARNING log 68763 6198325248 Not Found: /media/images/
+2024-03-23 19:01:32,176 WARNING basehttp 68763 6198325248 "GET /media/images/ HTTP/1.1" 404 4986
+2024-03-23 19:01:32,178 INFO basehttp 68763 6198325248 - Broken pipe from ('127.0.0.1', 61638)
+2024-03-23 19:01:37,174 WARNING log 68763 6198325248 Not Found: /media/images/Back/media/images/UnderConstruction.jpeg
+2024-03-23 19:01:37,174 WARNING basehttp 68763 6198325248 "GET /media/images/Back/media/images/UnderConstruction.jpeg HTTP/1.1" 404 5195
+2024-03-23 19:01:37,175 INFO basehttp 68763 6198325248 - Broken pipe from ('127.0.0.1', 61647)
+2024-03-23 19:02:29,186 INFO basehttp 68763 6198325248 "GET //media/images/UnderConstruction.jpeg HTTP/1.1" 200 155179
+2024-03-23 19:06:16,175 INFO basehttp 68763 6198325248 "GET //media/images/UnderConstruction.jpeg HTTP/1.1" 304 0
+2024-03-23 19:15:04,822 INFO basehttp 68763 6198325248 "GET //media/images/UnderConstruction.jpeg HTTP/1.1" 304 0
+2024-03-23 19:23:06,320 - INFO - Token obtain request received
+2024-03-23 19:23:06,476 - INFO - Generating token for user: lior
+2024-03-23 19:23:06,479 - INFO - Token obtained successfully for user: lior
+2024-03-23 19:23:06,480 INFO basehttp 68763 6198325248 "POST /login/ HTTP/1.1" 200 1134
+2024-03-23 19:23:06,534 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:23:06,540 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:23:06,546 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:23:06,551 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:23:06,551 INFO basehttp 68763 6248804352 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:23:06,555 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:23:09,750 INFO basehttp 68763 6265630720 "GET //media/images/UnderConstruction.jpeg HTTP/1.1" 304 0
+2024-03-23 19:35:32,705 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:32,711 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:32,711 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:32,716 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:33,580 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:33,594 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:33,600 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:33,611 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:33,614 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:35:33,617 INFO basehttp 68763 6198325248 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:35:34,562 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:34,567 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:34,569 INFO basehttp 68763 6215151616 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:34,572 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:35,196 INFO basehttp 68763 6231977984 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:35:35,200 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:35,206 INFO basehttp 68763 6215151616 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:35,207 INFO basehttp 68763 6248804352 "GET /profiles/2/ HTTP/1.1" 200 152
+2024-03-23 19:35:35,212 INFO basehttp 68763 6231977984 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:35,217 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:36,815 INFO basehttp 68763 6198325248 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:36,817 INFO basehttp 68763 6231977984 "GET /appointments/ HTTP/1.1" 200 2743
+2024-03-23 19:35:36,823 INFO basehttp 68763 6248804352 "GET /patients/ HTTP/1.1" 200 1761
+2024-03-23 19:35:36,825 INFO basehttp 68763 6198325248 "GET /appointments/ HTTP/1.1" 200 2743

@@ -16,17 +16,14 @@ class AppointmentJustSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AppointmentSerializer(serializers.ModelSerializer):
-    # Define the occurrence_date field with the desired date format
     occurrence_date = serializers.DateField(format='%Y-%m-%d')
 
-    # Use a nested serializer for the patient field
     patient = PatientSerializer()
 
     class Meta:
         model = Appointment
         fields = '__all__'
 
-    # Define a method to get the patient's name
     def get_patient_name(self, obj):
         return obj.patient.first_name + ' ' + obj.patient.last_name if obj.patient else None
 
@@ -40,20 +37,17 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         fields = ['username', 'password', 'email', 'first_name', 'last_name', 'bio', 'specialization']
 
     def create(self, validated_data):
-        # Extract additional fields from serializer data
         bio = validated_data.pop('bio', None)
         specialization = validated_data.pop('specialization', None)
 
-        # Create user with first_name and last_name
         user = User.objects.create_user(**validated_data)
 
-        # Create a Patient linked to the new user
         Patient.objects.create(therapist=user, **validated_data)
 
         return user
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user_id = serializers.IntegerField()  # Allow user_id to be provided in request body
+    user_id = serializers.IntegerField()  
 
     class Meta:
         model = Profile

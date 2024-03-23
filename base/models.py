@@ -22,7 +22,7 @@ class Patient(models.Model):
 
 
 class Appointment(models.Model):
-    occurrence_date = models.DateField(default='2024-01-25')  # Set a default date as per your requirement
+    occurrence_date = models.DateField(default='2024-01-25') 
     therapist = models.ForeignKey(User, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     notes = models.TextField(blank=True, null=True)

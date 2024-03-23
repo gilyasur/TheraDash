@@ -18,11 +18,7 @@ import requests
 from django.http import HttpResponse
 from django.core.mail import send_mail
 import logging
-from django.template.loader import render_to_string
-from django.shortcuts import render, redirect
 from .forms import ProfileForm
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 from datetime import datetime
 import logging
 
@@ -102,7 +98,6 @@ class UserRegistrationView(generics.CreateAPIView):
     def perform_create(self, serializer):
         # Create a new user
         user = User.objects.create_user(**serializer.validated_data)
-        # You may return additional data if needed
         return Response({'message': 'User created successfully'}, status=status.HTTP_201_CREATED)
 
 
@@ -128,10 +123,6 @@ def change_password_view(request, user_id):
             # Set the new password for the user
             user.set_password(new_password)
             user.save()
-            # Optionally, you can update the username as well
-            # user.username = username
-            # user.save()
-            # Return a success response
             return Response({'message': 'Password changed successfully'}, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             # Handle case where user with provided user_id does not exist
@@ -148,19 +139,18 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         logger.info("Generating token for user: %s", user.username)
 
         token = super().get_token(user)
-        
-        # Add custom claims
+
         token['username'] = user.username
         token['first_name'] = user.first_name
         token['last_name'] = user.last_name
         token['email'] = user.email
         token['id'] = user.id
-        # Add profile image URL
 
         try:
             profile = Profile.objects.get(user=user)
             token['profile_image'] = profile.profile_image.url if profile.profile_image else None
-            token['dob'] = profile.dob.isoformat() if profile.dob else None  # Convert dob to ISO 8601 string
+            token['dob'] = profile.dob.isoformat() if profile.dob else None  
+            token['address'] = profile.address if profile.address else None
         except Profile.DoesNotExist:
             token['profile_image'] = None
             
@@ -202,19 +192,17 @@ class ProfileRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
-    lookup_field = 'user_id'  # Set the lookup field to 'user_id'
+    lookup_field = 'user_id'  
 
     def get_queryset(self):
         # Filter profiles based on the authenticated user
         return Profile.objects.filter(user=self.request.user)
     
     def perform_create(self, serializer):
-        # Assign the current user to the profile being created
         serializer.save(user=self.request.user)
 
 class ProfileListCreateView(APIView):
     def post(self, request, user_id, format=None):
-        # Assign the user_id to the user_id field of the profile
         request.data['user_id'] = user_id
         serializer = ProfileSerializer(data=request.data)
         print(user_id)
@@ -241,7 +229,6 @@ class EditProfileView(APIView):
             profile_instance.user = request.user
             profile_instance.save()
             
-            # Serialize the updated profile instance
             serializer = ProfileSerializer(profile_instance)
             
             return Response({'message': 'Profile updated successfully', 'profile': serializer.data}, status=status.HTTP_200_OK)
@@ -251,13 +238,11 @@ class EditProfileView(APIView):
 class SendResetPassword(APIView):
     def post(self, request):
         try:
-            # Logging setup
             logger = logging.getLogger(__name__)
             logger.info("Reset password request received")
 
             username = request.data.get('username')
             
-            # Find the user with the given username
             user = User.objects.filter(username=username).first()
 
             if user is None:
