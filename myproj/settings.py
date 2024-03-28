@@ -32,12 +32,12 @@ STATIC_URL = 'static/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
+MEDIA_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR,  'staticfiles')
 
 
 STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'media'),
+    os.path.join(BASE_DIR,'staticfiles'),
 )
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -189,6 +189,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
